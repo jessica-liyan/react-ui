@@ -1,5 +1,5 @@
 import React from 'react'
-import {Radio, RadioItem} from '../components/Radio'
+import {Radio, RadioItem} from '@/Radio'
 
 export class RadioDoc extends React.Component{
   constructor (props) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from '../components/Button'
+import {Button} from '@/Button'
 import './demo.scss'
 
 export class ButtonDoc extends React.Component{

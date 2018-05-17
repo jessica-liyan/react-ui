@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
@@ -8,6 +9,11 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'components')
+    }
   },
   module: {
     rules: [{

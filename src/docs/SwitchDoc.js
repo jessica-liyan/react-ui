@@ -1,5 +1,5 @@
 import React from 'react'
-import {Switch} from '../components/Switch'
+import {Switch} from '@/Switch'
 
 export class SwitchDoc extends React.Component{
   constructor (props) {

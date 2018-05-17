@@ -1,7 +1,7 @@
 import React from 'react'
-import '../styles/radio.scss'
+import './styles/checkbox.scss'
 
-export class Radio extends React.Component{
+export class Checkbox extends React.Component{
   constructor (props) {
     super(props)
     this.state = {
@@ -11,16 +11,21 @@ export class Radio extends React.Component{
   }
 
   handleChange (value) {
+    let newChosen = this.state.chosen
+    if (newChosen.findIndex(x => x === value) > -1) {
+      newChosen.splice(newChosen.findIndex(x => x === value), 1)
+    } else {
+      newChosen.push(value)
+    }
     this.setState({
-      chosen: value
+      chosen: newChosen
     })
-    this.props.onChange(value)
+    this.props.onChange(this.state.chosen)
   }
 
-  // 将name属性添加到每个child组件props对象上
   render () {
     return (
-      <div className="radio">
+      <div className="checkbox">
         {
           React.Children.map(this.props.children, child => {
             return React.cloneElement(child, {
@@ -35,16 +40,16 @@ export class Radio extends React.Component{
   }
 }
 
-export class RadioItem extends React.Component{
+export class CheckboxItem extends React.Component{
   constructor (props) {
     super(props)
   }
 
   render(){
     return (
-      <label className="radio-item">
-        <input type="radio" name={this.props.name}
-        checked={this.props.value === this.props.chosen}
+      <label className="checkbox-item">
+        <input type="checkbox" name={this.props.name}
+        checked={this.props.chosen.findIndex(x => x === this.props.value) > -1}
         onChange={this.props.change.bind(this, this.props.value)}/>
         <span></span>
         {this.props.children} 
