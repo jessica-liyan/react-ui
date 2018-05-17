@@ -1,0 +1,46 @@
+@import './common/var.scss';
+
+.checkbox{
+  display:flex;
+  align-items:center;
+  .checkbox-item{
+    display:flex;
+    align-items:center;
+    font-size: $--checkbox-font-size;
+    color: $--checkbox-font-color;
+    margin-right:10px;
+    input{
+      position: absolute;
+      opacity:0;
+      &:checked + span{
+        border-color:$--checkbox-active-color;
+        &:before{
+          border-color:$--checkbox-active-color;
+        }
+      }
+    }
+    span{
+      display: inline-block;
+      width: $--checkbox-width;
+      height: $--checkbox-height;
+      border:1px solid $--checkbox-default-color;
+      position: relative;
+      transition:0.3s;
+      margin-right:5px;
+      &:before{
+        content:"";
+        display: inline-block;
+        width: 4px;
+        height: 8px;
+        border-bottom:1px solid #fff;
+        border-right:1px solid #fff;
+        transition:0.3s;
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        transform:rotate(45deg);
+      }
+    }
+  }
+}
+

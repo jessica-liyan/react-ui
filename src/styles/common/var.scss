@@ -1,0 +1,72 @@
+$--color-primary: #409EFF;
+$--color-danger: #ff6666;
+$--color-success: #67C23A;
+$--color-info: #909399;
+$--color-warning: #E6A23C;
+
+$--color-white: #fff;
+$--color-black: #000;
+$--color-gray: #ccc;
+$--color-3: #333;
+$--color-6: #666;
+$--color-9: #999;
+
+$--border: 1px solid $--color-gray;
+$--border-radius: 4px;
+
+// button
+$--button-font-size: 14px;
+$--button-border-radius: $--border-radius;
+$--button-color: $--color-white;
+$--button-fill: $--color-primary;
+$--button-border: $--border;
+$--button-padding-vertical: 10px;
+$--button-padding-horizontal: 15px;
+
+$--button-padding-list: 
+  (large 12px 20px),
+  (default 10px 15px),
+  (small 8px 10px),
+  (mini 6px 10px)
+;
+
+@each $var in $--button-padding-list{
+  .btn.btn-#{nth($var, 1)} {
+    padding: nth($var, 2) nth($var, 3);
+    &.btn-round{
+      border-radius: ($--button-font-size + nth($var, 2) * 2 + 2px)/2;
+    }
+  }
+};
+
+// switch
+$--switch-width: 50px;
+$--switch-height: 24px;
+$--switch-default-background: $--color-gray;
+$--switch-active-background: $--color-primary;
+
+$--switch-inner-width: $--switch-height - 4;
+$--switch-inner-height: $--switch-inner-width;
+$--switch-inner-default-left: 2px;
+$--switch-inner-active-left: $--switch-width - $--switch-inner-default-left - $--switch-inner-width;
+
+
+// radio
+$--radio-font-size: 14px;
+$--radio-font-color: #333;
+$--radio-width: 14px;
+$--radio-height: $--radio-width;
+$--radio-inner-width: 8px;
+$--radio-inner-height: $--radio-inner-width;
+$--radio-default-color: $--color-gray;
+$--radio-active-color: $--color-primary;
+
+// checkbox
+$--checkbox-font-size: 14px;
+$--checkbox-font-color: #333;
+$--checkbox-width: 14px;
+$--checkbox-height: $--checkbox-width;
+$--checkbox-default-color: $--color-gray;
+$--checkbox-active-color: $--color-primary;
+
+

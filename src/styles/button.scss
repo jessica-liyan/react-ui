@@ -1,0 +1,38 @@
+@import './common/var.scss';
+
+.btn{
+  display:inline-block;
+  vertical-align:middle;
+  background:#fff;
+  font-size: $--button-font-size;
+  padding: $--button-padding-vertical $--button-padding-horizontal;
+  border: $--button-border;
+  border-radius:$--button-border-radius;
+  transition:0.3s;
+  white-space: nowrap;
+  line-height:1;
+  &:hover{
+    border-color:$--button-fill;
+    color:$--button-fill;
+  }
+  &:focus{
+    outline:none;
+  }
+}
+
+.btn-primary{
+  background: $--button-fill;
+  border-color:$--button-fill;
+  color: #fff;
+  &:hover{
+    color:#fff;
+    opacity:0.9;
+  }
+}
+
+.btn-dashed{
+  border-style:dashed;
+}
+
+
+

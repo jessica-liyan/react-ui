@@ -1,0 +1,52 @@
+@import './common/var.scss';
+
+.radio{
+  display:flex;
+  align-items:center;
+  .radio-item{
+    display:flex;
+    align-items:center;
+    font-size: $--radio-font-size;
+    color: $--radio-font-color;
+    margin-right:10px;
+    input{
+      position: absolute;
+      opacity:0;
+      &:checked + span{
+        border-color:$--radio-active-color;
+        &:before{
+          background:$--radio-active-color;
+        }
+      }
+    }
+    span{
+      display: inline-block;
+      width: $--radio-width;
+      height: $--radio-height;
+      border:1px solid $--radio-default-color;
+      border-radius:50%;
+      position: relative;
+      transition:0.3s;
+      margin-right:5px;
+      &:before{
+        content:"";
+        display: inline-block;
+        width: $--radio-inner-width;
+        height: $--radio-inner-width;
+        background:#fff;
+        border-radius:50%;
+        transition:0.3s;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+
+
+
+
+

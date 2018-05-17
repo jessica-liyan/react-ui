@@ -1,0 +1,57 @@
+html{
+  height:100%;
+  body{
+    height:100%;
+    margin:0;
+    font-family:PingFang SC;
+    .app, #root{
+      height:100%;
+    }
+    .app{
+      display:flex;
+      flex-direction:row;
+      .app-nav{
+        flex: 0 0 300px;
+        overflow-y:auto;
+        background:#20232A;
+        a{
+          display: block;
+          font-size:16px;
+          color:#fff;
+          text-decoration:none;
+          padding:15px;
+          box-sizing:border-box;
+          position: relative;
+          i{
+            font-style:normal;
+            position: relative;
+            z-index:2;
+          }
+          &:before{
+            content:"";
+            display: inline-block;
+            width:100%;
+            height:100%;
+            background: #409EFF;
+            position: absolute;
+            left:0;
+            top:0;
+            transform:scaleX(0);
+            transition:0.3s;
+            transform-origin:left center;
+          }
+          &.active:before{
+            transform:scaleX(1);
+          }
+        }
+      }
+      .app-main{
+        flex:1;
+        overflow-y:auto;
+        padding:20px;
+        box-sizing:border-box;
+      }
+    }
+  }
+}
+

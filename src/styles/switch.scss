@@ -1,0 +1,36 @@
+@import './common/var.scss';
+
+.switch{
+  display: inline-block;
+  vertical-align:middle;
+  input{
+    position: absolute;
+    &:checked + span{
+      background: $--switch-active-background;
+      &:before{
+        left: $--switch-inner-active-left;
+      }
+    }
+  }
+  span{
+    display: inline-block;
+    width: $--switch-width;
+    height: $--switch-height;
+    border-radius: $--switch-height/2;
+    background: $--switch-default-background;
+    position: relative;
+    transition:0.3s;
+    &:before{
+      content:"";
+      display: inline-block;
+      width: $--switch-inner-width;
+      height: $--switch-inner-width;
+      border-radius:50%;
+      background:#fff;
+      position: absolute;
+      left: $--switch-inner-default-left;
+      top: $--switch-inner-default-left;
+      transition:0.3s;
+    }
+  }
+}
