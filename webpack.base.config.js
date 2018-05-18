@@ -49,6 +49,8 @@ module.exports = {
       filename: 'index.html',
       template: 'src/index.html'
     }),
-    new cleanWebpackPlugin(['dist'])
+    new cleanWebpackPlugin(['dist']),
+    new webpack.NamedModulesPlugin(), // 用于启动 HMR 时可以显示模块的相对路径
+    new webpack.HotModuleReplacementPlugin() // Hot Module Replacement 的插件
   ]
 }
